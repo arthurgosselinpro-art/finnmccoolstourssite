@@ -1,0 +1,1877 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Award-winning day tours from Dublin and Belfast — Giant's Causeway, Cliffs of Moher, Game of Thrones country and more. Free cancellation up to 24 hours.">
+<title>Finn McCool's Tours · Day Tours from Dublin & Belfast</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script type="text/javascript" src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=ef5785c5-28db-40cf-bf9f-41f2b2a2e2a2" async></script>
+<style>
+  :root {
+    --green-dark: #0F1F18;
+    --green-mid: #1a2e22;
+    --green-light: #243d2e;
+    --orange: #E8622A;
+    --orange-light: #f07340;
+    --white: #ffffff;
+    --cream: #f5f0e8;
+    --gray: #8a9e8e;
+    --text: #e8ede9;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--green-dark);
+    color: var(--text);
+    line-height: 1.6;
+  }
+
+  /* PAGE SYSTEM */
+  .page { display: none; }
+  .page.active { display: block; }
+
+  /* ANNOUNCEMENT BAR */
+  .announcement-bar {
+    background: var(--orange);
+    color: white;
+    text-align: center;
+    padding: 8px 20px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* NAVBAR */
+  nav {
+    background: var(--green-dark);
+    padding: 12px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .logo-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .logo-text {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+  }
+
+  .logo-text span { color: var(--orange); }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    opacity: 0.85;
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+
+  .nav-links a:hover, .nav-links a.active { opacity: 1; color: white; }
+
+  .btn-primary {
+    background: var(--orange);
+    color: white;
+    padding: 10px 22px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.2s, transform 0.1s;
+  }
+
+  .btn-primary:hover { background: var(--orange-light); transform: translateY(-1px); }
+
+  .btn-outline {
+    background: transparent;
+    color: white;
+    padding: 10px 22px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    border: 2px solid rgba(255,255,255,0.3);
+    text-decoration: none;
+    display: inline-block;
+    transition: border-color 0.2s;
+  }
+
+  .btn-outline:hover { border-color: white; }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    min-height: 92vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #0a1a10 0%, #1a3020 50%, #0d1f14 100%);
+  }
+
+  .hero-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600"><defs><radialGradient id="g" cx="60%" cy="40%"><stop offset="0%" stop-color="%23243d2e" stop-opacity="0.8"/><stop offset="100%" stop-color="%230a1510" stop-opacity="0"/></radialGradient></defs><rect width="800" height="600" fill="url(%23g)"/></svg>') center/cover;
+  }
+
+  .hero-img {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 55%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.35;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 80px 80px;
+    max-width: 620px;
+  }
+
+  .hero-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .hero-label::before {
+    content: '';
+    width: 30px;
+    height: 2px;
+    background: var(--orange);
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(42px, 5vw, 72px);
+    font-weight: 900;
+    line-height: 1.05;
+    color: white;
+    margin-bottom: 24px;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--orange);
+  }
+
+  .hero p {
+    font-size: 16px;
+    color: var(--gray);
+    max-width: 440px;
+    margin-bottom: 36px;
+    line-height: 1.7;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .hero-rating {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    color: var(--gray);
+  }
+
+  .stars { color: #f5a623; letter-spacing: 2px; }
+
+  /* TICKER */
+  .ticker {
+    background: var(--green-mid);
+    padding: 14px 0;
+    overflow: hidden;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .ticker-track {
+    display: flex;
+    gap: 0;
+    animation: ticker 40s linear infinite;
+    white-space: nowrap;
+  }
+
+  .ticker-item {
+    padding: 0 28px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gray);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .ticker-item::before { content: '✦'; color: var(--orange); font-size: 8px; }
+
+  @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* SECTIONS */
+  section { padding: 80px 80px; }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .section-label::before { content: ''; width: 24px; height: 2px; background: var(--orange); }
+
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 3.5vw, 52px);
+    font-weight: 900;
+    line-height: 1.1;
+    color: white;
+    margin-bottom: 40px;
+  }
+
+  h2 em { font-style: italic; color: var(--orange); }
+
+  /* WHY CHOOSE US */
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .feature-card {
+    background: var(--green-mid);
+    padding: 32px 28px;
+    transition: background 0.2s;
+  }
+
+  .feature-card:hover { background: var(--green-light); }
+
+  .feature-icon {
+    width: 44px;
+    height: 44px;
+    background: var(--orange);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+
+  .feature-card h3 { font-size: 15px; font-weight: 700; color: white; margin-bottom: 6px; }
+  .feature-card p { font-size: 13px; color: var(--gray); line-height: 1.6; }
+
+  /* TOURS GRID */
+  .tours-section { background: var(--green-dark); }
+
+  .tours-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 40px;
+  }
+
+  .tour-filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 32px;
+  }
+
+  .filter-btn {
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.2s;
+    background: var(--green-mid);
+    color: var(--gray);
+  }
+
+  .filter-btn.active, .filter-btn:hover {
+    background: var(--orange);
+    color: white;
+    border-color: var(--orange);
+  }
+
+  .tours-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .tour-card {
+    background: var(--green-mid);
+    border-radius: 14px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.25s, box-shadow 0.25s;
+    position: relative;
+  }
+
+  .tour-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+  }
+
+  .tour-card-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    background: linear-gradient(135deg, #1a3020, #243d2e);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .tour-img-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.5) 100%);
+  }
+
+  .tour-badge {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    background: var(--orange);
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 4px;
+  }
+
+  .tour-card-body { padding: 20px; }
+
+  .tour-meta {
+    display: flex;
+    gap: 14px;
+    font-size: 12px;
+    color: var(--gray);
+    margin-bottom: 10px;
+  }
+
+  .tour-meta span { display: flex; align-items: center; gap: 4px; }
+
+  .tour-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+
+  .tour-card p { font-size: 13px; color: var(--gray); line-height: 1.6; margin-bottom: 16px; }
+
+  .tour-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255,255,255,0.07);
+  }
+
+  .tour-cta-link {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--orange);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+  }
+
+  /* WHERE WILL YOU START */
+  .location-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 32px;
+  }
+
+  .location-card {
+    border-radius: 14px;
+    overflow: hidden;
+    position: relative;
+    height: 260px;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+
+  .location-card:hover { transform: scale(1.02); }
+
+  .location-card-bg {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #1a3020, #2a4a35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 60px;
+  }
+
+  .location-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 28px;
+  }
+
+  .location-overlay h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 900;
+    color: white;
+  }
+
+  .location-overlay p { font-size: 13px; color: rgba(255,255,255,0.75); margin-top: 4px; }
+
+  .location-arrow {
+    position: absolute;
+    bottom: 28px;
+    right: 28px;
+    width: 40px;
+    height: 40px;
+    background: var(--orange);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+  }
+
+  /* REVIEWS */
+  .reviews-section { background: var(--green-mid); }
+
+  .review-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 48px;
+  }
+
+  .stat-card {
+    background: var(--green-dark);
+    border-radius: 12px;
+    padding: 28px;
+  }
+
+  .stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    font-weight: 900;
+    color: white;
+    margin-bottom: 4px;
+  }
+
+  .stat-label { font-size: 13px; color: var(--gray); }
+
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .review-card {
+    background: var(--green-dark);
+    border-radius: 12px;
+    padding: 24px;
+  }
+
+  .review-stars { color: #f5a623; font-size: 13px; margin-bottom: 10px; }
+
+  .review-card h4 { font-size: 14px; font-weight: 700; color: white; margin-bottom: 8px; }
+  .review-card p { font-size: 13px; color: var(--gray); line-height: 1.6; }
+
+  .review-footer {
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255,255,255,0.07);
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: var(--gray);
+  }
+
+  .reviewer-name { font-weight: 600; color: var(--text); }
+
+  /* CTA SECTION */
+  .cta-section {
+    background: linear-gradient(135deg, var(--green-light), var(--green-mid));
+    border-radius: 20px;
+    margin: 0 80px 80px;
+    padding: 60px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .cta-section h2 { margin-bottom: 12px; }
+  .cta-section p { color: var(--gray); max-width: 440px; }
+
+  /* FOOTER */
+  footer {
+    background: var(--green-mid);
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding: 60px 80px 30px;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 40px;
+  }
+
+  .footer-brand p { font-size: 13px; color: var(--gray); margin-top: 14px; max-width: 300px; line-height: 1.7; }
+
+  .footer-socials { display: flex; gap: 12px; margin-top: 20px; }
+
+  .social-btn {
+    width: 36px;
+    height: 36px;
+    background: var(--green-dark);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.2s;
+    text-decoration: none;
+    color: white;
+  }
+
+  .social-btn:hover { background: var(--orange); }
+
+  .footer-col h4 {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--gray);
+    margin-bottom: 16px;
+  }
+
+  .footer-col ul { list-style: none; }
+
+  .footer-col li { margin-bottom: 10px; }
+
+  .footer-col a {
+    font-size: 14px;
+    color: var(--text);
+    text-decoration: none;
+    opacity: 0.8;
+    cursor: pointer;
+    transition: opacity 0.2s, color 0.2s;
+  }
+
+  .footer-col a:hover { opacity: 1; color: var(--orange); }
+
+  .footer-contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: var(--text);
+    margin-bottom: 10px;
+    opacity: 0.85;
+  }
+
+  .footer-contact-icon { color: var(--orange); font-size: 16px; }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.07);
+    padding-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: var(--gray);
+  }
+
+  .footer-bottom a { color: var(--gray); text-decoration: none; }
+  .footer-bottom a:hover { color: white; }
+
+  /* ABOUT PAGE */
+  .about-hero { padding: 80px 80px; }
+
+  .about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    margin-bottom: 80px;
+  }
+
+  .about-img {
+    border-radius: 16px;
+    overflow: hidden;
+    height: 400px;
+    background: linear-gradient(135deg, #1a3020, #2a4a35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 80px;
+  }
+
+  .about-text h2 { margin-bottom: 20px; }
+  .about-text p { font-size: 15px; color: var(--gray); margin-bottom: 16px; line-height: 1.8; }
+
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-top: 48px;
+  }
+
+  .value-card {
+    background: var(--green-mid);
+    padding: 32px 24px;
+  }
+
+  .value-card h3 { font-size: 14px; font-weight: 700; color: white; margin-bottom: 8px; }
+  .value-card p { font-size: 13px; color: var(--gray); line-height: 1.6; }
+
+  .trusted-by { margin-top: 60px; }
+  .trusted-by h3 {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 20px;
+  }
+
+  .trust-logos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+
+  .trust-logo {
+    background: var(--green-mid);
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--gray);
+    border: 1px solid rgba(255,255,255,0.07);
+  }
+
+  /* CONTACT PAGE */
+  .contact-hero { padding: 80px 80px; }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+
+  .contact-form {
+    background: var(--green-mid);
+    border-radius: 16px;
+    padding: 40px;
+  }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+  .form-group { margin-bottom: 20px; }
+
+  .form-group label {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--gray);
+    margin-bottom: 8px;
+  }
+
+  .form-group label span { color: var(--orange); }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    background: var(--green-dark);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    padding: 12px 16px;
+    color: white;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--orange);
+  }
+
+  .form-group textarea { resize: vertical; min-height: 120px; }
+
+  .contact-info-cards { display: flex; flex-direction: column; gap: 16px; }
+
+  .contact-info-card {
+    background: var(--green-mid);
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .contact-info-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--orange);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+
+  .contact-info-card h4 { font-size: 12px; color: var(--gray); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px; }
+  .contact-info-card p { font-size: 15px; font-weight: 600; color: white; }
+
+  /* TOUR DETAIL PAGE */
+  .tour-detail { padding: 60px 80px; }
+
+  .back-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--gray);
+    cursor: pointer;
+    margin-bottom: 24px;
+    transition: color 0.2s;
+  }
+
+  .back-link:hover { color: white; }
+
+  .tour-detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 40px;
+    align-items: start;
+  }
+
+  .tour-detail-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 10px;
+  }
+
+  .tour-detail h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 3vw, 42px);
+    font-weight: 900;
+    color: white;
+    margin-bottom: 16px;
+    line-height: 1.15;
+  }
+
+  .tour-detail-meta {
+    display: flex;
+    gap: 20px;
+    font-size: 13px;
+    color: var(--gray);
+    margin-bottom: 28px;
+    flex-wrap: wrap;
+  }
+
+  .tour-detail-meta span { display: flex; align-items: center; gap: 6px; }
+
+  .tour-main-img {
+    width: 100%;
+    height: 360px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #1a3020, #2a4a35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 80px;
+    margin-bottom: 16px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .tour-thumb-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 36px;
+  }
+
+  .tour-thumb {
+    height: 90px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #1a3020, #2a4a35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+  }
+
+  .tour-thumb:hover, .tour-thumb.active { opacity: 1; }
+
+  .tour-section-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 16px;
+    margin-top: 32px;
+  }
+
+  .tour-description { font-size: 15px; color: var(--gray); line-height: 1.8; margin-bottom: 32px; }
+
+  .highlights-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-bottom: 32px;
+  }
+
+  .highlight-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: var(--text);
+  }
+
+  .highlight-item::before { content: '✓'; color: var(--orange); font-weight: 700; }
+
+  .itinerary-item {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 24px;
+    position: relative;
+  }
+
+  .itinerary-item::before {
+    content: '';
+    position: absolute;
+    left: 19px;
+    top: 36px;
+    bottom: -24px;
+    width: 2px;
+    background: rgba(255,255,255,0.08);
+  }
+
+  .itinerary-item:last-child::before { display: none; }
+
+  .itinerary-dot {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--orange);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    color: white;
+    flex-shrink: 0;
+  }
+
+  .itinerary-content h4 { font-size: 15px; font-weight: 700; color: white; margin-bottom: 4px; }
+  .itinerary-content p { font-size: 13px; color: var(--gray); }
+
+  .included-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+
+  .included-card {
+    background: var(--green-mid);
+    border-radius: 12px;
+    padding: 24px;
+  }
+
+  .included-card h4 { font-size: 14px; font-weight: 700; color: white; margin-bottom: 14px; }
+
+  .included-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    color: var(--gray);
+    margin-bottom: 8px;
+  }
+
+  .included-item.yes::before { content: '✓'; color: var(--orange); font-weight: 700; }
+  .included-item.no::before { content: '✗'; color: var(--gray); }
+
+  /* BOOKING WIDGET SIDEBAR */
+  .booking-sidebar {
+    position: sticky;
+    top: 80px;
+  }
+
+  .booking-widget-container {
+    background: var(--green-mid);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .booking-widget-container .bokunWidget {
+    min-height: 400px;
+  }
+
+  /* TOURS ALL PAGE */
+  .tours-page { padding: 60px 80px; }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    nav { padding: 12px 20px; }
+    section, .tours-page, .tour-detail, .about-hero, .contact-hero { padding: 50px 20px; }
+    .hero-content { padding: 60px 20px; }
+    .cta-section { margin: 0 20px 60px; padding: 40px 24px; flex-direction: column; }
+    footer { padding: 40px 20px 20px; }
+    .features-grid, .tours-grid, .reviews-grid, .review-stats { grid-template-columns: 1fr; }
+    .location-cards, .about-content, .contact-grid, .included-grid, .highlights-grid, .values-grid, .trust-logos { grid-template-columns: 1fr; }
+    .tour-detail-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+    .form-row { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="announcement-bar">
+  🛡️ 100% REFUND IF CANCELLED UP TO 24 HOURS BEFORE DEPARTURE
+</div>
+
+<!-- NAVBAR -->
+<nav>
+  <a class="logo" onclick="showPage('home')">
+    <svg class="logo-icon" viewBox="0 0 40 40" fill="none">
+      <circle cx="20" cy="20" r="20" fill="#E8622A"/>
+      <path d="M10 28 L20 10 L30 28" stroke="white" stroke-width="3" fill="none"/>
+      <path d="M14 22 L26 22" stroke="white" stroke-width="2"/>
+    </svg>
+    <span class="logo-text"><span>Finn </span>McCoolsTours</span>
+  </a>
+  <ul class="nav-links">
+    <li><a onclick="showPage('home')" id="nav-home" class="active">Home</a></li>
+    <li><a onclick="showPage('tours')" id="nav-tours">Tours</a></li>
+    <li><a onclick="showPage('about')" id="nav-about">About</a></li>
+    <li><a onclick="showPage('reviews')" id="nav-reviews">Reviews</a></li>
+    <li><a onclick="showPage('contact')" id="nav-contact">Contact</a></li>
+  </ul>
+  <button class="btn-primary" onclick="showPage('tours')">Book a Tour</button>
+</nav>
+
+<!-- ========== HOME PAGE ========== -->
+<div id="page-home" class="page active">
+
+  <!-- HERO -->
+  <section class="hero" style="padding:0;">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <div class="hero-label">Issue No. 01 · Travellers' Choice 2025</div>
+      <h1>Step into the <em>myth</em>, walk the <em>wild coast.</em></h1>
+      <p>Daily, small-group adventures from Dublin & Belfast. Giant's Causeway, Cliffs of Moher, Game of Thrones country — with the highest-rated guides in Ireland.</p>
+      <div class="hero-actions">
+        <button class="btn-primary" onclick="showPage('tours')">Find your tour</button>
+        <button class="btn-outline" onclick="showPage('about')">Our story</button>
+      </div>
+      <div class="hero-rating">
+        <span class="stars">★★★★★</span>
+        <span>4.9 from <strong style="color:white;">40,000+</strong> travellers</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- TICKER -->
+  <div class="ticker">
+    <div class="ticker-track">
+      <span class="ticker-item">8,842 GetYourGuide Reviews</span>
+      <span class="ticker-item">9,846 Viator Reviews</span>
+      <span class="ticker-item">7,833 TripAdvisor Reviews</span>
+      <span class="ticker-item">40,000+ Five-Star Reviews</span>
+      <span class="ticker-item">Voted Best Tour in Ireland 2024</span>
+      <span class="ticker-item">TripAdvisor Best of the Best</span>
+      <span class="ticker-item">8,842 GetYourGuide Reviews</span>
+      <span class="ticker-item">9,846 Viator Reviews</span>
+      <span class="ticker-item">7,833 TripAdvisor Reviews</span>
+      <span class="ticker-item">40,000+ Five-Star Reviews</span>
+      <span class="ticker-item">Voted Best Tour in Ireland 2024</span>
+      <span class="ticker-item">TripAdvisor Best of the Best</span>
+    </div>
+  </div>
+
+  <!-- WHY CHOOSE US -->
+  <section>
+    <div class="section-label">Why Choose Us</div>
+    <h2>Built for travellers who want it <em>all done right.</em></h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🏆</div>
+        <h3>Award-winning</h3>
+        <p>TripAdvisor Travellers' Choice Best of the Best every year since we started.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">✓</div>
+        <h3>Free cancellation</h3>
+        <p>Up to 24 hours before tour departure. Separate drivers and guides.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">👥</div>
+        <h3>Pro guides + drivers</h3>
+        <p>Luxury coaches, professionally trained crew. Stories you won't forget.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🚌</div>
+        <h3>Comfort onboard</h3>
+        <p>Luxury coaches with free WiFi & USB ports. Sit back and enjoy the ride.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BESTSELLER TOURS -->
+  <section class="tours-section">
+    <div class="tours-header">
+      <div>
+        <div class="section-label">Bestsellers · Hand-Picked</div>
+        <h2>Tours travellers <em>never forget.</em></h2>
+      </div>
+      <button class="btn-outline" onclick="showPage('tours')">View all tours</button>
+    </div>
+
+    <div class="section-label" style="margin-bottom:24px;">Find a tour by location</div>
+    <h2 style="font-size:28px;margin-bottom:0;">Where will you <em>start</em>?</h2>
+    <div class="location-cards">
+      <div class="location-card" onclick="filterAndShowTours('dublin')">
+        <div class="location-card-bg">🏰</div>
+        <div class="location-overlay">
+          <h3>From Dublin</h3>
+          <p>Day tours leaving from the heart of the capital.</p>
+        </div>
+        <div class="location-arrow">→</div>
+      </div>
+      <div class="location-card" onclick="filterAndShowTours('belfast')">
+        <div class="location-card-bg">⚓</div>
+        <div class="location-overlay">
+          <h3>From Belfast</h3>
+          <p>Northern Ireland's coast & history, right at your door.</p>
+        </div>
+        <div class="location-arrow">→</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RECENT REVIEWS PREVIEW -->
+  <section class="reviews-section">
+    <div class="section-label">Loved by 40,000+ Travellers</div>
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:36px;">
+      <h2>Recent <em>reviews</em></h2>
+      <button class="btn-outline" onclick="showPage('reviews')">Read all</button>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <h4>Thank you for an amazing day!</h4>
+        <p>Our guide Geoffrey was very educational and effective — consistent updates on history, songs, live music. Driver Yuri navigated dangerous roads safely. 10/10.</p>
+        <div class="review-footer"><span class="reviewer-name">Heady A.</span><span>Giant's Causeway</span></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <h4>Titanic and Giant's Causeway tour was amazing!</h4>
+        <p>Thanks to Dermot and John, we enjoyed our visit to Northern Ireland. Dermot shared a lot of information about Ireland and the places we visited.</p>
+        <div class="review-footer"><span class="reviewer-name">Christina B.</span><span>Belfast & Causeway</span></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <h4>Great experience!</h4>
+        <p>Our guide Tara and driver Telma were awesome. Tara was very entertaining and super energetic! Definitely thumbs up.</p>
+        <div class="review-footer"><span class="reviewer-name">Justin G.</span><span>Game of Thrones</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <div>
+      <div class="section-label">Ready when you are</div>
+      <h2>Your next great Irish story <em>starts here.</em></h2>
+      <p>Pick a tour, choose a date, and we'll handle the rest. Free cancellation up to 24 hours.</p>
+    </div>
+    <button class="btn-primary" onclick="showPage('tours')" style="font-size:16px;padding:16px 32px;white-space:nowrap;">
+      Browse all tours →
+    </button>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo" style="cursor:default;">
+          <svg width="32" height="32" viewBox="0 0 40 40" fill="none">
+            <circle cx="20" cy="20" r="20" fill="#E8622A"/>
+            <path d="M10 28 L20 10 L30 28" stroke="white" stroke-width="3" fill="none"/>
+            <path d="M14 22 L26 22" stroke="white" stroke-width="2"/>
+          </svg>
+          <span class="logo-text"><span>Finn </span>McCoolsTours</span>
+        </div>
+        <p>Award-winning day tours from Dublin and Belfast. Travellers' Choice Best of the Best on TripAdvisor — 40,000+ five-star reviews and counting.</p>
+        <div class="footer-socials">
+          <a class="social-btn" href="#">📷</a>
+          <a class="social-btn" href="#">📘</a>
+          <a class="social-btn" href="#">🐦</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a onclick="showPage('tours')">All Tours</a></li>
+          <li><a onclick="filterAndShowTours('dublin')">Dublin Departures</a></li>
+          <li><a onclick="filterAndShowTours('belfast')">Belfast Departures</a></li>
+          <li><a onclick="showPage('reviews')">Reviews</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <div class="footer-contact-item"><span class="footer-contact-icon">📞</span>(01) 882 8344</div>
+        <div class="footer-contact-item"><span class="footer-contact-icon">✉️</span>bookings@finnmccoolstours.ie</div>
+        <div class="footer-contact-item"><span class="footer-contact-icon">📍</span>Dublin · Belfast</div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Finn McCool's Tours. All rights reserved.</span>
+      <span>
+        <a href="#">Free cancellation up to 24 hours</a> ·
+        <a href="#"> Cancellation terms of the ticket</a>
+      </span>
+    </div>
+  </footer>
+</div>
+
+<!-- ========== TOURS PAGE ========== -->
+<div id="page-tours" class="page">
+  <div class="tours-page">
+    <div class="section-label">Day Tours · Ireland</div>
+    <h2>Explore our <em>tours</em></h2>
+    <p style="color:var(--gray);margin-bottom:32px;">Hand-picked, award-winning day tours from Dublin and Belfast. Free cancellation up to 24 hours.</p>
+
+    <div class="tour-filters">
+      <button class="filter-btn active" onclick="filterTours('all', this)">All tours</button>
+      <button class="filter-btn" onclick="filterTours('dublin', this)">From Dublin</button>
+      <button class="filter-btn" onclick="filterTours('belfast', this)">From Belfast</button>
+      <button class="filter-btn" onclick="filterTours('shore', this)">Shore Excursions</button>
+    </div>
+
+    <div class="tours-grid" id="tours-grid">
+
+      <!-- BELFAST TOURS -->
+      <div class="tour-card" data-category="belfast" onclick="showTour('giants-belfast')">
+        <div class="tour-card-img">🌊<div class="tour-img-overlay"></div></div>
+        <div class="tour-badge">Bestseller</div>
+        <div class="tour-card-body">
+          <div class="tour-meta"><span>⏱ 9 hours</span><span>📍 Belfast</span><span>⭐ 4.9</span></div>
+          <h3>Giant's Causeway, Glens of Antrim & Dark Hedges from Belfast</h3>
+          <p>The full Causeway Coast classic — UNESCO stones, Glens, and the Kingsroad.</p>
+          <div class="tour-card-footer"><span class="tour-cta-link">Book to see availability →</span></div>
+        </div>
+      </div>
+
+      <div class="tour-card" data-category="belfast" onclick="showTour('titanic-belfast')">
+        <div class="tour-card-img">🚢<div class="tour-img-overlay"></div></div>
+        <div class="tour-badge">Top Rated</div>
+        <div class="tour-card-body">
+          <div class="tour-meta"><span>⏱ 9 hours</span><span>📍 Belfast</span><span>⭐ 4.9</span></div>
+          <h3>Titanic Museum & Giant's Causeway from Belfast</h3>
+          <p>Where the Titanic was built — and where history meets wild coast.</p>
+          <div class="tour-card-footer"><span class="tour-cta-link">Book to see availability →</span></div>
+        </div>
+      </div>
+
+      <div class="tour-card" data-category="dublin" onclick="showTour('glendalough')">
+        <div class="tour-card-img">🏔️<div class="tour-img-overlay"></div></div>
+        <div class="tour-badge">Editor's Pick</div>
+        <div class="tour-card-body">
+          <div class="tour-meta"><span>⏱ 11 hours</span><span>📍 Dublin</span><span>⭐ 4.8</span></div>
+          <h3>Glendalough, Wicklow & Kilkenny incl. Sheepdog Trails</h3>
+          <p>Monastic ruins, mountain lakes, medieval Kilkenny — and a working sheepdog demo.</p>
+          <div class="tour-card-footer"><span class="tour-cta-link">Book to see availability →</span></div>
+        </div>
+      </div>
+
+      <div class="tour-card" data-category="dublin" onclick="showTour('giants-dublin')">
+        <div class="tour-card-img">🌊<div class="tour-img-overlay"></div></div>
+        <div class="tour-badge">Bestseller</div>
+        <div class="tour-card-body">
+          <div class="tour-meta"><span>⏱ 13 hours</span><span>📍 Dublin</span><span>⭐ 4.9</span></div>
+          <h3>Giant's Causeway, Glens of Antrim & Dark Hedges from Dublin</h3>
+          <p>Stand atop ancient basalt columns whipped by wind and ocean cobble.</p>
+          <div class="tour-card-footer"><span class="tour-cta-link">Book to see availability →</span></div>
+        </div>
+      </div>
+
+      <div class="tour-card" data-category="dublin" onclick="showTour('cliffs')">
+        <div class="tour-card-img">🏔️<div class="tour-img-overlay"></div></div>
+        <div class="tour-badge">Top Rated</div>
+        <div class="tour-card-body">
+          <div class="tour-meta"><span>⏱ 13 hours</span><span>📍 Dublin</span><span>⭐ 4.8</span></div>
+          <h3>Cliffs of Moher, Galway & the Burren from Dublin</h3>
+          <p>700ft cliffs, Atlantic spray, and the soul of the West.</p>
+          <div class="tour-card-footer"><span class="tour-cta-link">Book to see availability →</span></div>
+        </div>
+      </div>
+
+      <div class="tour-card" data-category="dublin" onclick="showTour('titanic-dublin')">
+        <div class="tour-card-img">🚢<div class="tour-img-overlay"></div></div>
+        <div class="tour-badge">Editor's Pick</div>
+        <div class="tour-card-body">
+          <div class="tour-meta"><span>⏱ 14 hours</span><span>📍 Dublin</span><span>⭐ 4.9</span></div>
+          <h3>Titanic Museum & Giant's Causeway from Dublin</h3>
+          <p>Two hours in one epic day: the Titanic Belfast and the Giant's Causeway.</p>
+          <div class="tour-card-footer"><span class="tour-cta-link">Book to see availability →</span></div>
+        </div>
+      </div>
+
+      <div class="tour-card" data-category="belfast" onclick="showTour('distillers-belfast')">
+        <div class="tour-card-img">🥃<div class="tour-img-overlay"></div></div>
+        <div class="tour-badge">Premium</div>
+        <div class="tour-card-body">
+          <div class="tour-meta"><span>⏱ 8 hours</span><span>📍 Belfast</span><span>⭐ 4.8</span></div>
+          <h3>Giant's Causeway & Titanic Distillers from Belfast</h3>
+          <p>Small cobbled columns of the Causeway and a Belfast brew's new-age whiskey.</p>
+          <div class="tour-card-footer"><span class="tour-cta-link">Book to see availability →</span></div>
+        </div>
+      </div>
+
+      <div class="tour-card" data-category="dublin" onclick="showTour('walking')">
+        <div class="tour-card-img">🚶<div class="tour-img-overlay"></div></div>
+        <div class="tour-badge">Dublin's Gem</div>
+        <div class="tour-card-body">
+          <div class="tour-meta"><span>⏱ 2 hours</span><span>📍 Dublin</span><span>⭐ 4.8</span></div>
+          <h3>Walking Tour in Dublin</h3>
+          <p>The city's stories, characters and pints — on foot, in two hours.</p>
+          <div class="tour-card-footer"><span class="tour-cta-link">Book to see availability →</span></div>
+        </div>
+      </div>
+
+      <div class="tour-card" data-category="dublin" onclick="showTour('distillers-dublin')">
+        <div class="tour-card-img">🥃<div class="tour-img-overlay"></div></div>
+        <div class="tour-badge">Premium</div>
+        <div class="tour-card-body">
+          <div class="tour-meta"><span>⏱ 13 hours</span><span>📍 Dublin</span><span>⭐ 4.9</span></div>
+          <h3>Giant's Causeway & Titanic Distillers from Dublin</h3>
+          <p>From Dublin: the full Giant's Causeway and a whiskey tasting.</p>
+          <div class="tour-card-footer"><span class="tour-cta-link">Book to see availability →</span></div>
+        </div>
+      </div>
+
+      <div class="tour-card" data-category="shore" onclick="showTour('shore-glendalough')">
+        <div class="tour-card-img">⚓<div class="tour-img-overlay"></div></div>
+        <div class="tour-card-body">
+          <div class="tour-meta"><span>⏱ 8 hours</span><span>📍 Dublin</span><span>⭐ 4.8</span></div>
+          <h3>SHORE: Glendalough & Dublin</h3>
+          <p>A shore excursion for cruise passengers: Glendalough and Dublin city highlights.</p>
+          <div class="tour-card-footer"><span class="tour-cta-link">Book to see availability →</span></div>
+        </div>
+      </div>
+
+      <div class="tour-card" data-category="shore" onclick="showTour('shore-howth')">
+        <div class="tour-card-img">🌊<div class="tour-img-overlay"></div></div>
+        <div class="tour-card-body">
+          <div class="tour-meta"><span>⏱ 8 hours</span><span>📍 Dublin</span><span>⭐ 4.8</span></div>
+          <h3>SHORE: Howth & Dublin City</h3>
+          <p>Howth cliff walk and a seafood village stop, then Dublin city highlights.</p>
+          <div class="tour-card-footer"><span class="tour-cta-link">Book to see availability →</span></div>
+        </div>
+      </div>
+
+      <div class="tour-card" data-category="shore" onclick="showTour('shore-belfast')">
+        <div class="tour-card-img">🏰<div class="tour-img-overlay"></div></div>
+        <div class="tour-card-body">
+          <div class="tour-meta"><span>⏱ 8 hours</span><span>📍 Belfast</span><span>⭐ 4.9</span></div>
+          <h3>SHORE: Giant's Causeway & Titanic (Belfast)</h3>
+          <p>A shore-window excursion: the Causeway coast and the Titanic Quarter.</p>
+          <div class="tour-card-footer"><span class="tour-cta-link">Book to see availability →</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- Footer repeated -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo" style="cursor:default;">
+          <svg width="32" height="32" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="20" fill="#E8622A"/><path d="M10 28 L20 10 L30 28" stroke="white" stroke-width="3" fill="none"/><path d="M14 22 L26 22" stroke="white" stroke-width="2"/></svg>
+          <span class="logo-text"><span>Finn </span>McCoolsTours</span>
+        </div>
+        <p>Award-winning day tours from Dublin and Belfast. Travellers' Choice Best of the Best on TripAdvisor — 40,000+ five-star reviews and counting.</p>
+      </div>
+      <div class="footer-col"><h4>Explore</h4><ul>
+        <li><a onclick="showPage('tours')">All Tours</a></li>
+        <li><a onclick="filterAndShowTours('dublin')">Dublin Departures</a></li>
+        <li><a onclick="filterAndShowTours('belfast')">Belfast Departures</a></li>
+        <li><a onclick="showPage('reviews')">Reviews</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Contact</h4>
+        <div class="footer-contact-item"><span class="footer-contact-icon">📞</span>(01) 882 8344</div>
+        <div class="footer-contact-item"><span class="footer-contact-icon">✉️</span>bookings@finnmccoolstours.ie</div>
+        <div class="footer-contact-item"><span class="footer-contact-icon">📍</span>Dublin · Belfast</div>
+      </div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Finn McCool's Tours. All rights reserved.</span><span><a href="#">Free cancellation up to 24 hours</a> · <a href="#">Cancellation terms of the ticket</a></span></div>
+  </footer>
+</div>
+
+<!-- ========== TOUR DETAIL PAGES ========== -->
+<div id="page-tour-detail" class="page">
+  <div class="tour-detail">
+    <div class="back-link" onclick="showPage('tours')">← All tours</div>
+    <div class="tour-detail-grid">
+      <div>
+        <div class="tour-detail-label" id="tour-from-label">From Belfast</div>
+        <h1 id="tour-detail-title">Tour Title</h1>
+        <div class="tour-detail-meta" id="tour-detail-meta"></div>
+        <div class="tour-main-img" id="tour-main-img">🌊</div>
+        <div class="tour-thumb-row" id="tour-thumbs"></div>
+        <div class="tour-section-title">About this tour</div>
+        <p class="tour-description" id="tour-description"></p>
+        <div class="tour-section-title">Highlights</div>
+        <div class="highlights-grid" id="tour-highlights"></div>
+        <div class="tour-section-title">Itinerary</div>
+        <div id="tour-itinerary"></div>
+        <div class="tour-section-title">What's included</div>
+        <div class="included-grid" id="tour-included"></div>
+      </div>
+      <div class="booking-sidebar">
+        <div class="booking-widget-container" id="booking-widget-area"></div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo" style="cursor:default;"><svg width="32" height="32" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="20" fill="#E8622A"/><path d="M10 28 L20 10 L30 28" stroke="white" stroke-width="3" fill="none"/><path d="M14 22 L26 22" stroke="white" stroke-width="2"/></svg><span class="logo-text"><span>Finn </span>McCoolsTours</span></div>
+        <p>Award-winning day tours from Dublin and Belfast.</p>
+      </div>
+      <div class="footer-col"><h4>Explore</h4><ul><li><a onclick="showPage('tours')">All Tours</a></li><li><a onclick="filterAndShowTours('dublin')">Dublin Departures</a></li><li><a onclick="filterAndShowTours('belfast')">Belfast Departures</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><div class="footer-contact-item"><span class="footer-contact-icon">📞</span>(01) 882 8344</div><div class="footer-contact-item"><span class="footer-contact-icon">✉️</span>bookings@finnmccoolstours.ie</div></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Finn McCool's Tours. All rights reserved.</span></div>
+  </footer>
+</div>
+
+<!-- ========== ABOUT PAGE ========== -->
+<div id="page-about" class="page">
+  <div class="about-hero">
+    <div class="section-label">Our Story</div>
+    <h2>Tours born from <em>love of place.</em></h2>
+    <div class="about-content">
+      <div class="about-img">🏰</div>
+      <div class="about-text">
+        <p>Finn McCool's Tours began as a single coach and a wild idea: that the best way to see Ireland isn't through a polished script, but through stories told by people who actually live them.</p>
+        <p>Years on, we've consistently ranked among the top tour companies in Northern Europe, with over 40,000 five-star reviews across TripAdvisor, Viator, GetYourGuide and Google. But the thing that matters most to us hasn't changed: that you finish the day with a story worth telling.</p>
+        <p>We run modern, comfortable coaches with separate drivers and guides. We believe in free cancellation, fair prices, and giving you proper time at every stop — not just a photo-op rush.</p>
+        <button class="btn-primary" onclick="showPage('tours')">Browse tours</button>
+      </div>
+    </div>
+
+    <h2>What we <em>stand for</em></h2>
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="feature-icon" style="margin-bottom:14px;">🏆</div>
+        <h3>Excellence as standard</h3>
+        <p>TripAdvisor Best of the Best every year since we started.</p>
+      </div>
+      <div class="value-card">
+        <div class="feature-icon" style="margin-bottom:14px;">📖</div>
+        <h3>Stories over scripts</h3>
+        <p>Our guides are passionate locals — historians, musicians, characters.</p>
+      </div>
+      <div class="value-card">
+        <div class="feature-icon" style="margin-bottom:14px;">👥</div>
+        <h3>Small, sociable groups</h3>
+        <p>We never feel like a tour bus. Just a great day with nice mates.</p>
+      </div>
+      <div class="value-card">
+        <div class="feature-icon" style="margin-bottom:14px;">🗺️</div>
+        <h3>Off-the-beaten-path</h3>
+        <p>Hidden monasteries, quiet harbours, surprise stops along the way.</p>
+      </div>
+    </div>
+
+    <div class="trusted-by">
+      <h3>Trusted by</h3>
+      <div class="trust-logos">
+        <div class="trust-logo">TripAdvisor</div>
+        <div class="trust-logo">Viator</div>
+        <div class="trust-logo">GetYourGuide</div>
+        <div class="trust-logo">Visit Belfast</div>
+        <div class="trust-logo">Fáilte Ireland</div>
+        <div class="trust-logo">CLIA Trusted</div>
+        <div class="trust-logo">Google</div>
+        <div class="trust-logo">Tourism Ireland</div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="logo" style="cursor:default;"><svg width="32" height="32" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="20" fill="#E8622A"/><path d="M10 28 L20 10 L30 28" stroke="white" stroke-width="3" fill="none"/><path d="M14 22 L26 22" stroke="white" stroke-width="2"/></svg><span class="logo-text"><span>Finn </span>McCoolsTours</span></div><p>Award-winning day tours from Dublin and Belfast.</p></div>
+      <div class="footer-col"><h4>Explore</h4><ul><li><a onclick="showPage('tours')">All Tours</a></li><li><a onclick="filterAndShowTours('dublin')">Dublin Departures</a></li><li><a onclick="filterAndShowTours('belfast')">Belfast Departures</a></li><li><a onclick="showPage('reviews')">Reviews</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><div class="footer-contact-item"><span class="footer-contact-icon">📞</span>(01) 882 8344</div><div class="footer-contact-item"><span class="footer-contact-icon">✉️</span>bookings@finnmccoolstours.ie</div><div class="footer-contact-item"><span class="footer-contact-icon">📍</span>Dublin · Belfast</div></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Finn McCool's Tours. All rights reserved.</span></div>
+  </footer>
+</div>
+
+<!-- ========== REVIEWS PAGE ========== -->
+<div id="page-reviews" class="page">
+  <section class="reviews-section" style="background:var(--green-dark);">
+    <div class="section-label">Reviews</div>
+    <h2>40,000+ <em>five-star stories</em></h2>
+    <div class="review-stats">
+      <div class="stat-card"><div class="stat-number">4.9</div><div class="stat-label">Average rating</div></div>
+      <div class="stat-card"><div class="stat-number">9,845</div><div class="stat-label">GetYourGuide reviews</div></div>
+      <div class="stat-card"><div class="stat-number">7,833</div><div class="stat-label">TripAdvisor reviews</div></div>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card"><div class="review-stars">★★★★★</div><h4>Thank you for an amazing day!</h4><p>Our guide Geoffrey was very educational and effective — consistent updates on history, songs, live music. Driver Yuri navigated dangerous roads safely. 10/10.</p><div class="review-footer"><span class="reviewer-name">Heady A.</span><span>Giant's Causeway</span></div></div>
+      <div class="review-card"><div class="review-stars">★★★★★</div><h4>Titanic and Giant's Causeway tour was amazing!</h4><p>Thanks to Dermot and John, we enjoyed our visit to Northern Ireland. Dermot shared a lot of information about Ireland and the places we visited.</p><div class="review-footer"><span class="reviewer-name">Christina B.</span><span>Belfast & Causeway</span></div></div>
+      <div class="review-card"><div class="review-stars">★★★★★</div><h4>Great experience!</h4><p>Our guide Tara and driver Telma were awesome. Tara was very entertaining and super energetic! Definitely thumbs up.</p><div class="review-footer"><span class="reviewer-name">Justin G.</span><span>Game of Thrones</span></div></div>
+      <div class="review-card"><div class="review-stars">★★★★★</div><h4>Great guide, Good trip</h4><p>Avid GOT fans — worth the long ride to see the coastlines and beauty of Ireland. Our guide Dan gave great info on Dublin, Belfast and the little towns.</p><div class="review-footer"><span class="reviewer-name">Cara M.</span><span>Game of Thrones</span></div></div>
+      <div class="review-card"><div class="review-stars">★★★★</div><h4>Great tour!</h4><p>The Dark Hedges, Giant's Causeway, Ballinoy Harbour, Carrickmore Castle — I expected to see the highlights on my second Long day but absolutely worth it.</p><div class="review-footer"><span class="reviewer-name">Catriona B.</span><span>Game of Thrones</span></div></div>
+      <div class="review-card"><div class="review-stars">★★★★★</div><h4>Best choice hands-down!</h4><p>Dermot was extremely approachable, explained every detail with a fun approach. Finn McCool will make it fun and legit.</p><div class="review-footer"><span class="reviewer-name">Ava G.</span><span>Causeway Guide</span></div></div>
+      <div class="review-card"><div class="review-stars">★★★★★</div><h4>Great Day Trip!</h4><p>Our guide Mac was knowledgeable and gave thorough info about Irish history, folklore and the sights. Two hours at the Cliffs of Moher were the highlight.</p><div class="review-footer"><span class="reviewer-name">Renee G.</span><span>Cliffs of Moher</span></div></div>
+      <div class="review-card"><div class="review-stars">★★★★</div><h4>Living History</h4><p>Nick's passion for history mixed with his slightly corny humour made the trip come alive. Loved the surprise monastery stop no other company seems to visit.</p><div class="review-footer"><span class="reviewer-name">Catherine H.</span><span>Cliffs of Moher</span></div></div>
+      <div class="review-card"><div class="review-stars">★★★★★</div><h4>One of the best tours you'll ever do!</h4><p>Nick was absolutely fantastic, super knowledgeable. We had so much time at the Causeway and rope bridge on one of the clearest days Ireland has ever seen.</p><div class="review-footer"><span class="reviewer-name">Amelia A.</span><span>Causeway & Belfast</span></div></div>
+    </div>
+  </section>
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="logo" style="cursor:default;"><svg width="32" height="32" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="20" fill="#E8622A"/><path d="M10 28 L20 10 L30 28" stroke="white" stroke-width="3" fill="none"/><path d="M14 22 L26 22" stroke="white" stroke-width="2"/></svg><span class="logo-text"><span>Finn </span>McCoolsTours</span></div><p>Award-winning day tours from Dublin and Belfast.</p></div>
+      <div class="footer-col"><h4>Explore</h4><ul><li><a onclick="showPage('tours')">All Tours</a></li><li><a onclick="filterAndShowTours('dublin')">Dublin Departures</a></li><li><a onclick="filterAndShowTours('belfast')">Belfast Departures</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><div class="footer-contact-item"><span class="footer-contact-icon">📞</span>(01) 882 8344</div><div class="footer-contact-item"><span class="footer-contact-icon">✉️</span>bookings@finnmccoolstours.ie</div><div class="footer-contact-item"><span class="footer-contact-icon">📍</span>Dublin · Belfast</div></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Finn McCool's Tours. All rights reserved.</span></div>
+  </footer>
+</div>
+
+<!-- ========== CONTACT PAGE ========== -->
+<div id="page-contact" class="page">
+  <div class="contact-hero">
+    <div class="section-label">Get in Touch</div>
+    <h2>Talk to the <em>team</em></h2>
+    <p style="color:var(--gray);margin-bottom:48px;">Custom tours, group bookings, or just a question about your day — drop us a line.</p>
+    <div class="contact-grid">
+      <div class="contact-form">
+        <div class="form-row">
+          <div class="form-group"><label>Name <span>*</span></label><input type="text" placeholder="Your name"></div>
+          <div class="form-group"><label>Email <span>*</span></label><input type="email" placeholder="you@example.com"></div>
+        </div>
+        <div class="form-group"><label>Subject</label><select><option>General Inquiry</option><option>Group Booking</option><option>Existing Booking</option><option>Press & Media</option></select></div>
+        <div class="form-group"><label>Message <span>*</span></label><textarea placeholder="Tell us about your trip..."></textarea></div>
+        <button class="btn-primary" style="width:100%;">Send message →</button>
+      </div>
+      <div class="contact-info-cards">
+        <div class="contact-info-card"><div class="contact-info-icon">📞</div><div><h4>Phone</h4><p>(01) 882 8344</p></div></div>
+        <div class="contact-info-card"><div class="contact-info-icon">✉️</div><div><h4>Email</h4><p>bookings@finnmccoolstours.ie</p></div></div>
+        <div class="contact-info-card"><div class="contact-info-icon">📍</div><div><h4>Offices</h4><p>Dublin · Belfast</p></div></div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="logo" style="cursor:default;"><svg width="32" height="32" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="20" fill="#E8622A"/><path d="M10 28 L20 10 L30 28" stroke="white" stroke-width="3" fill="none"/><path d="M14 22 L26 22" stroke="white" stroke-width="2"/></svg><span class="logo-text"><span>Finn </span>McCoolsTours</span></div><p>Award-winning day tours from Dublin and Belfast.</p></div>
+      <div class="footer-col"><h4>Explore</h4><ul><li><a onclick="showPage('tours')">All Tours</a></li><li><a onclick="showPage('reviews')">Reviews</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><div class="footer-contact-item"><span class="footer-contact-icon">📞</span>(01) 882 8344</div><div class="footer-contact-item"><span class="footer-contact-icon">✉️</span>bookings@finnmccoolstours.ie</div></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Finn McCool's Tours. All rights reserved.</span></div>
+  </footer>
+</div>
+
+<script>
+// =========== TOUR DATA ===========
+const tours = {
+  'giants-belfast': {
+    title: "Giant's Causeway, Glens of Antrim & Dark Hedges from Belfast",
+    from: 'Belfast', duration: '9 hours', rating: '4.9', reviews: '10,300+',
+    emoji: '🌊',
+    description: "Departing Belfast, drive the dramatic Antrim Coast Road through the nine Glens of Antrim. Walk the legendary hexagonal columns of the Giant's Causeway and pass beneath the beech canopy of the Dark Hedges — the Kingsroad of Westeros.",
+    highlights: ["Giant's Causeway UNESCO Site","Nine Glens of Antrim","Carrick-a-Rede viewpoint","Dark Hedges (Kingsroad)","Antrim Coast Road","Belfast city panorama"],
+    itinerary: [
+      {time:'08:00',title:'Depart Belfast',desc:'Meet at central Belfast pickup.'},
+      {time:'10:00',title:'Glens of Antrim',desc:'Drive through the most beautiful coastal route in Europe.'},
+      {time:'11:30',title:'Carrick-a-Rede',desc:'Photo stop above the rope bridge.'},
+      {time:'13:00',title:"Giant's Causeway",desc:'Two hours at the basalt columns.'},
+      {time:'15:30',title:'Dark Hedges',desc:'The Kingsroad — iconic photo stop.'},
+      {time:'17:00',title:'Return Belfast',desc:'Drop-off central Belfast.'},
+    ],
+    included: ["Luxury coach travel","Expert local guide","Free WiFi & USB charging","Site commentary"],
+    notIncluded: ["Site entrance fees (optional)","Food and drinks"],
+    bokun: `<script type="text/javascript" src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=ef5785c5-28db-40cf-bf9f-41f2b2a2e2a2" async><\/script><div class="bokunWidget" data-src="https://widgets.bokun.io/online-sales/ef5785c5-28db-40cf-bf9f-41f2b2a2e2a2/experience-calendar/12427"></div><noscript>Please enable javascript in your browser to book</noscript>`
+  },
+  'titanic-belfast': {
+    title: "Titanic Museum & Giant's Causeway from Belfast",
+    from: 'Belfast', duration: '9 hours', rating: '4.9', reviews: '10,000+',
+    emoji: '🚢',
+    description: "A perfect Northern Ireland double-header from Belfast: tour the world-famous Titanic Belfast museum in the city's regenerated shipyard, then head north for an afternoon among the basalt columns of the Giant's Causeway.",
+    highlights: ["Titanic Belfast Museum","Giant's Causeway UNESCO Site","Belfast city panorama","Titanic Quarter","Antrim Coast Road"],
+    itinerary: [
+      {time:'08:30',title:'Central pickup',desc:'Central Belfast.'},
+      {time:'09:30',title:'Titanic Quarter',desc:'Two hours at Titanic Belfast.'},
+      {time:'11:45',title:'Casual drive',desc:'North along the Antrim coast.'},
+      {time:'13:30',title:"Giant's Causeway",desc:'Walk the legendary stones.'},
+      {time:'16:00',title:'Return Belfast',desc:'Drop-off central.'},
+    ],
+    included: ["Coach travel","Expert guide","WiFi onboard","Titanic Museum entry"],
+    notIncluded: ["Lunch","Optional extras"],
+    bokun: `<script type="text/javascript" src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=ef5785c5-28db-40cf-bf9f-41f2b2a2e2a2" async><\/script><div class="bokunWidget" data-src="https://widgets.bokun.io/online-sales/ef5785c5-28db-40cf-bf9f-41f2b2a2e2a2/experience-calendar/18601"></div><noscript>Please enable javascript in your browser to book</noscript>`
+  },
+  'glendalough': {
+    title: "Glendalough, Wicklow & Kilkenny incl. Sheepdog Trails",
+    from: 'Dublin', duration: '11 hours', rating: '4.8', reviews: '91,000+',
+    emoji: '🏔️',
+    description: "Wander 6th-century monastic ruins beside still glacial lakes in Wicklow, watch a working sheepdog herd a flock across a hillside, then visit the cobbled lanes of Kilkenny, Ireland's medieval capital.",
+    highlights: ["Glendalough monastic site","Kilkenny medieval city","Sally Gap scenic drive","Wicklow Mountains National Park","Working sheepdog demonstration"],
+    itinerary: [
+      {time:'08:30',title:'Depart Dublin',desc:'South through the mountains.'},
+      {time:'10:00',title:'Glendalough',desc:'Round tower and lakes.'},
+      {time:'12:00',title:'Sheepdog Trials',desc:'Working dog demonstration.'},
+      {time:'14:30',title:'Kilkenny',desc:'Free time in medieval streets.'},
+      {time:'17:30',title:'Return Dublin',desc:'Back to central Dublin.'},
+    ],
+    included: ["Coach","Expert guide","WiFi","Sheepdog trial demo"],
+    notIncluded: ["Castle entry","Lunch"],
+    bokun: `<script type="text/javascript" src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=ef5785c5-28db-40cf-bf9f-41f2b2a2e2a2" async><\/script><div class="bokunWidget" data-src="https://widgets.bokun.io/online-sales/ef5785c5-28db-40cf-bf9f-41f2b2a2e2a2/experience-calendar/12256"></div><noscript>Please enable javascript in your browser to book</noscript>`
+  },
+  'giants-dublin': {
+    title: "Giant's Causeway, Glens of Antrim & Dark Hedges from Dublin",
+    from: 'Dublin', duration: '13 hours', rating: '4.9', reviews: '12,000+',
+    emoji: '🌊',
+    description: "Travel north from Dublin into Northern Ireland's wild Antrim coast. Walk across the legendary hexagonal stones of the Giant's Causeway, drive the breathtaking Antrim Coast Road, and wander beneath the beech canopy of the Dark Hedges.",
+    highlights: ["Giant's Causeway UNESCO Site","Dark Hedges (Kingsroad)","Antrim Coast Road","Glens of Antrim","Belfast city panorama"],
+    itinerary: [
+      {time:'06:45',title:'Depart Dublin',desc:'Meet at central Dublin pickup.'},
+      {time:'09:00',title:'Dark Hedges',desc:'Photo stop at the iconic beech-lined road.'},
+      {time:'10:30',title:'Antrim coast',desc:'Drive the world-famous coastal road.'},
+      {time:'12:00',title:"Giant's Causeway",desc:'Two hours at the basalt formations.'},
+      {time:'14:30',title:'Belfast Stop',desc:'Quick city panorama before returning.'},
+      {time:'16:00',title:'Return Dublin',desc:'Drop-off at central Dublin.'},
+    ],
+    included: ["Luxury coach","Expert local guide","Wifi & USB","Site commentary"],
+    notIncluded: ["Site entrance fees (optional)","Meals"],
+    bokun: `<script type="text/javascript" src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=ef5785c5-28db-40cf-bf9f-41f2b2a2e2a2" async><\/script><div class="bokunWidget" data-src="https://widgets.bokun.io/online-sales/ef5785c5-28db-40cf-bf9f-41f2b2a2e2a2/experience-calendar/12156"></div><noscript>Please enable javascript in your browser to book</noscript>`
+  },
+  'cliffs': {
+    title: "Cliffs of Moher, Galway & the Burren from Dublin",
+    from: 'Dublin', duration: '13 hours', rating: '4.8', reviews: '10,000+',
+    emoji: '🏔️',
+    description: "Cross Ireland to its wild Atlantic edge. Spend two hours at the breathtaking Cliffs of Moher, drive through the otherworldly limestone Burren, and wander Galway's medieval stone streets.",
+    highlights: ["Cliffs of Moher (2 hours)","The Burren landscape","Hidden monastery stop","Galway City exploration","Wild Atlantic Way drive"],
+    itinerary: [
+      {time:'07:00',title:'Depart Dublin',desc:'Head west across Ireland.'},
+      {time:'10:00',title:'Surprise monastery',desc:'Off-the-beaten path stop.'},
+      {time:'11:30',title:'Cliffs of Moher',desc:'Two hours on the cliff edge.'},
+      {time:'14:00',title:'The Burren',desc:'Drive through the lunar landscape.'},
+      {time:'15:30',title:'Galway',desc:'Free time in the City of Tribes.'},
+      {time:'18:30',title:'Return Dublin',desc:'Back to central Dublin.'},
+    ],
+    included: ["Luxury coach travel","Expert guide","WiFi","Hot drinks stop"],
+    notIncluded: ["Cliffs entrance (optional €8)","Lunch in Galway"],
+    bokun: `<script type="text/javascript" src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=ef5785c5-28db-40cf-bf9f-41f2b2a2e2a2" async><\/script><div class="bokunWidget" data-src="https://widgets.bokun.io/online-sales/ef5785c5-28db-40cf-bf9f-41f2b2a2e2a2/experience-calendar/12271"></div><noscript>Please enable javascript in your browser to book</noscript>`
+  },
+  'titanic-dublin': {
+    title: "Titanic Museum & Giant's Causeway from Dublin",
+    from: 'Dublin', duration: '14 hours', rating: '4.9', reviews: '10,000+',
+    emoji: '🚢',
+    description: "An ambitious north-bound day from Dublin combining Belfast's Titanic Museum, the regenerated shipyard, and an unforgettable afternoon at the Giant's Causeway.",
+    highlights: ["Titanic Belfast Museum entry","Giant's Causeway UNESCO Site","Belfast panorama","Titanic Quarter","Antrim Coast scenic drive"],
+    itinerary: [
+      {time:'06:30',title:'Depart Dublin',desc:'Early start for the long day.'},
+      {time:'09:30',title:'Titanic Quarter',desc:'Two hours at Titanic Belfast.'},
+      {time:'12:00',title:'Antrim coast',desc:'Scenic drive north.'},
+      {time:'13:30',title:"Giant's Causeway",desc:'Walk the legendary stones.'},
+      {time:'15:30',title:'Return drive',desc:'Sunset on the coast.'},
+      {time:'19:00',title:'Arrive Dublin',desc:'Drop-off.'},
+    ],
+    included: ["Coach travel","Expert guide","WiFi onboard","Titanic Museum entry"],
+    notIncluded: ["Meals","Optional extras"],
+    bokun: `<script type="text/javascript" src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=ef5785c5-28db-40cf-bf9f-41f2b2a2e2a2" async><\/script><div class="bokunWidget" data-src="https://widgets.bokun.io/online-sales/ef5785c5-28db-40cf-bf9f-41f2b2a2e2a2/experience-calendar/18010"></div><noscript>Please enable javascript in your browser to book</noscript>`
+  },
+  'distillers-belfast': {
+    title: "Giant's Causeway & Titanic Distillers from Belfast",
+    from: 'Belfast', duration: '8 hours', rating: '4.8', reviews: '10,000+',
+    emoji: '🥃',
+    description: "Combine the Giant's Causeway with a guided tasting at Titanic Distillers — Belfast's first working whiskey distillery in nearly 90 years, set in the iconic Thompson Dock pump-house.",
+    highlights: ["Giant's Causeway","Antrim Coast Road","Titanic Distillers tasting","Thompson Dock heritage","Whiskey & history pairing"],
+    itinerary: [
+      {time:'09:00',title:'Depart Belfast',desc:'Central pickup.'},
+      {time:'10:30',title:"Giant's Causeway",desc:'Explore the basalt formations.'},
+      {time:'13:00',title:'Coast return',desc:'Antrim coast drive back.'},
+      {time:'15:00',title:'Titanic Distillers',desc:'Guided tasting at the pump-house.'},
+      {time:'16:30',title:'Drop-off',desc:'Central Belfast.'},
+    ],
+    included: ["Coach","Guide","Distillery tasting (2 drams)","WiFi"],
+    notIncluded: ["Site entrance fees","Lunch"],
+    bokun: `<script type="text/javascript" src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=ef5785c5-28db-40cf-bf9f-41f2b2a2e2a2" async><\/script><div class="bokunWidget" data-src="https://widgets.bokun.io/online-sales/ef5785c5-28db-40cf-bf9f-41f2b2a2e2a2/experience-calendar/259315"></div><noscript>Please enable javascript in your browser to book</noscript>`
+  },
+  'walking': {
+    title: "Walking Tour in Dublin",
+    from: 'Dublin', duration: '2 hours', rating: '4.8', reviews: '10,000+',
+    emoji: '🚶',
+    description: "A short, brilliant introduction to Dublin: Trinity College, Temple Bar, Dublin Castle, the GPO and the city's literary and political past — guided by a local who actually loves it here.",
+    highlights: ["Trinity College grounds","Dublin Castle exterior","Hidden literary spots","Temple Bar lanes","GPO & 1916 history"],
+    itinerary: [
+      {time:'11:00',title:'Meet point',desc:'Central Dublin meeting place.'},
+      {time:'11:15',title:'Trinity College',desc:'Old Library and grounds.'},
+      {time:'11:45',title:'Temple Bar & Castle',desc:'Lanes and landmarks.'},
+      {time:'12:30',title:'GPO & Finish',desc:'1916 history wrap-up.'},
+    ],
+    included: ["Expert walking guide","Pocket map","Stories & craic"],
+    notIncluded: ["Drinks at the pub-stop","Castle entry"],
+    bokun: `<script type="text/javascript" src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=ef5785c5-28db-40cf-bf9f-41f2b2a2e2a2" async><\/script><div class="bokunWidget" data-src="https://widgets.bokun.io/online-sales/ef5785c5-28db-40cf-bf9f-41f2b2a2e2a2/experience-calendar/71156"></div><noscript>Please enable javascript in your browser to book</noscript>`
+  },
+  'distillers-dublin': {
+    title: "Giant's Causeway & Titanic Distillers from Dublin",
+    from: 'Dublin', duration: '13 hours', rating: '4.9', reviews: '10,000+',
+    emoji: '🥃',
+    description: "From Dublin: the full Causeway Coast experience plus a guided tasting at Titanic Distillers, set in Belfast's iconic Thompson Dock pump-house — the city's first working distillery in nearly 90 years.",
+    highlights: ["Giant's Causeway","Antrim Coast Road","Titanic Distillers tasting","Belfast Quarter heritage","Whiskey & history"],
+    itinerary: [
+      {time:'07:00',title:'Depart Dublin',desc:'Head north.'},
+      {time:'10:30',title:'Casual arrival',desc:'Belfast & coast drive.'},
+      {time:'11:00',title:"Giant's Causeway",desc:'Explore the basalt.'},
+      {time:'13:30',title:'Titanic Distillers',desc:'Guided whiskey tasting.'},
+      {time:'15:30',title:'Return Dublin',desc:'Back to base.'},
+    ],
+    included: ["Coach","Guide","Distillery tasting (2 drams)","WiFi"],
+    notIncluded: ["Lunch","Optional sites"],
+    bokun: `<script type="text/javascript" src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=ef5785c5-28db-40cf-bf9f-41f2b2a2e2a2" async><\/script><div class="bokunWidget" data-src="https://widgets.bokun.io/online-sales/ef5785c5-28db-40cf-bf9f-41f2b2a2e2a2/experience-calendar/219808"></div><noscript>Please enable javascript in your browser to book</noscript>`
+  },
+  'shore-glendalough': {
+    title: "SHORE: Glendalough & Dublin",
+    from: 'Dublin', duration: '8 hours', rating: '4.8', reviews: '10,000+',
+    emoji: '⚓',
+    description: "A timed shore excursion built for cruise passengers docking in Dublin: visit the 6th-century monastic settlement of Glendalough, drive the Wicklow Mountains, then a Dublin city highlights tour — all within your shore window.",
+    highlights: ["Glendalough monastic site","Dublin city highlights","Wicklow Mountains drive","Cruise-friendly timing"],
+    itinerary: [
+      {time:'09:00',title:'Port pickup',desc:'Pickup at Dublin Port.'},
+      {time:'10:30',title:'Glendalough',desc:'Monastic site & lakes.'},
+      {time:'13:00',title:'Dublin city',desc:'Highlights tour.'},
+      {time:'15:00',title:'Back to port',desc:'Return in time for sailing.'},
+    ],
+    included: ["Coach","Guide","Port pickup & drop-off"],
+    notIncluded: ["Lunch","Optional entries"],
+    bokun: `<script type="text/javascript" src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=ef5785c5-28db-40cf-bf9f-41f2b2a2e2a2" async><\/script><div class="bokunWidget" data-src="https://widgets.bokun.io/online-sales/ef5785c5-28db-40cf-bf9f-41f2b2a2e2a2/experience-calendar/79990"></div><noscript>Please enable javascript in your browser to book</noscript>`
+  },
+  'shore-howth': {
+    title: "SHORE: Howth & Dublin City",
+    from: 'Dublin', duration: '8 hours', rating: '4.8', reviews: '10,000+',
+    emoji: '🌊',
+    description: "Built for cruise passengers: drive out to the dramatic Howth peninsula north of Dublin for a coastal cliff walk and seafood village stop, then a guided Dublin city highlights tour.",
+    highlights: ["Howth cliff walk","Dublin city highlights","Howth harbour seafood village","Cruise-friendly timing"],
+    itinerary: [
+      {time:'09:00',title:'Port pickup',desc:'Pickup at Dublin Port.'},
+      {time:'10:00',title:'Howth',desc:'Cliff walk & village.'},
+      {time:'12:30',title:'Dublin city',desc:'Highlights tour.'},
+      {time:'15:00',title:'Back to port',desc:'Return in time for sailing.'},
+    ],
+    included: ["Coach","Guide","Port pickup & drop-off"],
+    notIncluded: ["Lunch","Optional entries"],
+    bokun: `<script type="text/javascript" src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=ef5785c5-28db-40cf-bf9f-41f2b2a2e2a2" async><\/script><div class="bokunWidget" data-src="https://widgets.bokun.io/online-sales/ef5785c5-28db-40cf-bf9f-41f2b2a2e2a2/experience-calendar/80058"></div><noscript>Please enable javascript in your browser to book</noscript>`
+  },
+  'shore-belfast': {
+    title: "SHORE: Giant's Causeway & Titanic (Belfast)",
+    from: 'Belfast', duration: '8 hours', rating: '4.9', reviews: '10,000+',
+    emoji: '🏰',
+    description: "A shore-window excursion for cruise passengers docking in Belfast: an afternoon at the Giant's Causeway and a stop at the iconic Titanic Belfast museum and shipyard.",
+    highlights: ["Giant's Causeway","Titanic Quarter","Antrim Coast Road","Cruise-friendly timing"],
+    itinerary: [
+      {time:'09:00',title:'Port pickup',desc:'Pickup at Belfast Port.'},
+      {time:'10:30',title:"Giant's Causeway",desc:'Walk the stones.'},
+      {time:'13:00',title:'Titanic Quarter',desc:'Museum stop.'},
+      {time:'15:30',title:'Back to port',desc:'Return in time for sailing.'},
+    ],
+    included: ["Coach","Guide","Port pickup & drop-off"],
+    notIncluded: ["Titanic Museum entry (optional)","Lunch"],
+    bokun: `<script type="text/javascript" src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=ef5785c5-28db-40cf-bf9f-41f2b2a2e2a2" async><\/script><div class="bokunWidget" data-src="https://widgets.bokun.io/online-sales/ef5785c5-28db-40cf-bf9f-41f2b2a2e2a2/experience-calendar/18603"></div><noscript>Please enable javascript in your browser to book</noscript>`
+  }
+};
+
+// =========== NAVIGATION ===========
+function showPage(pageId) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + pageId).classList.add('active');
+  document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+  const navEl = document.getElementById('nav-' + pageId);
+  if (navEl) navEl.classList.add('active');
+  window.scrollTo(0, 0);
+}
+
+function filterAndShowTours(category) {
+  showPage('tours');
+  setTimeout(() => filterTours(category, document.querySelector('.filter-btn')), 100);
+}
+
+function filterTours(category, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+  document.querySelectorAll('.tour-card').forEach(card => {
+    if (category === 'all' || card.dataset.category === category) {
+      card.style.display = 'block';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+
+function showTour(tourId) {
+  const t = tours[tourId];
+  if (!t) return;
+
+  document.getElementById('tour-from-label').textContent = 'From ' + t.from;
+  document.getElementById('tour-detail-title').textContent = t.title;
+  document.getElementById('tour-detail-meta').innerHTML = `
+    <span>⏱ ${t.duration}</span>
+    <span>📍 ${t.from}</span>
+    <span>⭐ ${t.rating}</span>
+    <span>📝 ${t.reviews} reviews</span>
+  `;
+  document.getElementById('tour-main-img').innerHTML = t.emoji;
+  document.getElementById('tour-thumbs').innerHTML = [t.emoji, '📸', '🌄'].map((e,i) =>
+    `<div class="tour-thumb ${i===0?'active':''}">${e}</div>`
+  ).join('');
+  document.getElementById('tour-description').textContent = t.description;
+  document.getElementById('tour-highlights').innerHTML = t.highlights.map(h =>
+    `<div class="highlight-item">${h}</div>`
+  ).join('');
+  document.getElementById('tour-itinerary').innerHTML = t.itinerary.map(item =>
+    `<div class="itinerary-item">
+      <div class="itinerary-dot">${item.time.split(':')[0]}</div>
+      <div class="itinerary-content"><h4>${item.title}</h4><p>${item.desc}</p></div>
+    </div>`
+  ).join('');
+  document.getElementById('tour-included').innerHTML = `
+    <div class="included-card">
+      <h4>What's included</h4>
+      ${t.included.map(i => `<div class="included-item yes">${i}</div>`).join('')}
+    </div>
+    <div class="included-card">
+      <h4>Not included</h4>
+      ${t.notIncluded.map(i => `<div class="included-item no">${i}</div>`).join('')}
+    </div>
+  `;
+
+  // Inject Bokun widget
+  const widgetArea = document.getElementById('booking-widget-area');
+  widgetArea.innerHTML = t.bokun;
+  // Re-run scripts in injected HTML
+  const scripts = widgetArea.querySelectorAll('script');
+  scripts.forEach(oldScript => {
+    const newScript = document.createElement('script');
+    if (oldScript.src) {
+      newScript.src = oldScript.src;
+      newScript.async = true;
+    } else {
+      newScript.textContent = oldScript.textContent;
+    }
+    oldScript.parentNode.replaceChild(newScript, oldScript);
+  });
+
+  showPage('tour-detail');
+}
+</script>
+</body>
+</html>
